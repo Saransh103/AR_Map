@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "com.sivakumar.visionar"
+        minSdkVersion 30
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    def nav_version = "2.3.0-alpha01"
+
+    //noinspection GradleDependency
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    //noinspection GradleDependency
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.google.android.material:material:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+  //  implementation ("com.mapbox.mapboxsdk:mapbox-android-navigation:0.43.0-alpha.1")
+   // implementation ('com.mapbox.mapboxsdk:mapbox-android-sdk:9.0.0@aar'){
+        //transitive=true
+
+    //}
+   // implementation "com.mapbox.mapboxsdk:mapbox-android-telemetry:4.7.1"
+
+   // implementation ('com.mapbox.mapboxsdk:mapbox-android-services:2.2.9@aar'){
+        //transitive=true
+   // }
+
+    /*
+    implementation('com.mapbox.mapboxsdk:mapbox-android-sdk:8.1.0') {
+        exclude group: 'com.mapbox.mapboxsdk', module: 'mapbox-android-telemetry'
+    }
+    */
+   // implementation("com.mapbox.mapboxsdk:mapbox-android-accounts:0.7.0") {
+      //  force = true
+    //}
+   // implementation('com.mapbox.mapboxsdk:mapbox-android-sdk:9.0.0@aar') {
+        //transitive = true
+   // }
+   // implementation('com.mapbox.mapboxsdk:mapbox-sdk-services:4.9.0')
+  //  implementation("com.squareup.okhttp3:okhttp:3.11.0")
+   // implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.43.0-alpha.1'
+   // implementation ('com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.5') {
+       // transitive = true
+   // }
+   // api "com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.5"
+
+    //implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.5'
+  //  implementation "com.mapbox.vision:mapbox-android-vision:0.13.0"
+  //  implementation "com.mapbox.vision:mapbox-android-vision-ar:0.13.0"
+  //  implementation "com.mapbox.vision:mapbox-android-vision-safety:0.13.0"
+   // implementation "com.mapbox.mapboxsdk:mapbox-android-navigation:0.43.0-alpha.1"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-core:1.4.1"
+
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-vision_0.13.0.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-vision-ar_0.13.0.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-vision-safety_0.13.0.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-vision-safety_0.13.0.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-android-navigation-0.42.6.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-android-sdk-9.2.1.aar"')
+  //  implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-android-telemetry-7.0.0.aar"')
+    implementation files('"C:/Users/Saransh/Documents/ARRFILESFORPROJECT/mapbox-android-telemetry-2.2.9.aar"')
+}

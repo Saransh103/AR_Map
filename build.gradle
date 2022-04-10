@@ -1,0 +1,92 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext.kotlin_version = '1.5.0'
+    repositories {
+        maven {
+            url 'https://api.mapbox.com/downloads/v1/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                password = 'sk.eyJ1Ijoic2FyYW5zaGhpcmFud2FsMSIsImEiOiJjbDE3Zm10Z3IwMndnM2xwbTN0cXh1M3J0In0.eOWMZR7kAuizuTQOoVFIKg'
+            }
+        }
+
+      // maven { url 'https://mapbox.bintray.com/mapbox' }
+        //maven {
+            //url = uri("http://oss.sonatype.org/content/repositories/snapshots")
+           // isAllowInsecureProtocol = true
+       // }
+       // jcenter {
+           // url "http://jcenter.bintray.com/"
+       // }
+        flatDir {
+            dirs("lib")
+        }
+        flatDir {
+            dirs("lib1", "lib2")
+        }
+        mavenCentral()
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        def nav_version = "2.3.0-alpha01"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+
+        maven { url 'https://mapbox.bintray.com/mapbox' }
+       // jcenter {
+           // url "http://jcenter.bintray.com/"
+       // }
+        flatDir {
+            dirs("lib")
+        }
+        flatDir {
+            dirs("lib1", "lib2")
+        }
+
+        mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven {
+            url = uri("https://repo.spring.io/release")
+        }
+        maven {
+            url = uri("https://repository.jboss.org/maven2")
+        }
+        maven { url "https://maven.google.com" }
+        maven { url 'https://mapbox.bintray.com/mapbox' }
+        maven { url 'https://maven.testfairy.com' }
+        maven {
+            url 'https://api.mapbox.com/downloads/v1/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                password = 'sk.eyJ1Ijoic2FyYW5zaGhpcmFud2FsMSIsImEiOiJjbDE3Zm10Z3IwMndnM2xwbTN0cXh1M3J0In0.eOWMZR7kAuizuTQOoVFIKg'
+            }
+        }
+        
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
